@@ -110,7 +110,7 @@ module.exports = (input, opts) => {
 					return 'Private package: not publishing to npm.';
 				}
 			},
-			task: () => exec('yarn', ['publish'].concat(opts.tag ? ['--tag', opts.tag] : []))
+			task: () => exec('yarn', ['publish', '--new-version', input].concat(opts.tag ? ['--tag', opts.tag] : []))
 		});
 	}
 
